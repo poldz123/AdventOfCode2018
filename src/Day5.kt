@@ -2,7 +2,7 @@ import java.io.File
 
 fun main() {
     val day5 = Day5()
-//    day5.part1()
+    day5.part1()
     day5.part2()
 }
 
@@ -18,11 +18,8 @@ class Day5 {
             if (i == input.count() - 1) {
                 break
             }
-            if (c.isLowerCase() && input[i + 1] == c.toUpperCase()) {
-                input.removeAt(i)
-                input.removeAt(i)
-                i = if (i == 0) 0 else i - 1
-            } else if (c.isUpperCase() && input[i + 1] == c.toLowerCase()) {
+            if (c.isLowerCase() && input[i + 1] == c.toUpperCase() ||
+                c.isUpperCase() && input[i + 1] == c.toLowerCase()) {
                 input.removeAt(i)
                 input.removeAt(i)
                 i = if (i == 0) 0 else i - 1
@@ -49,11 +46,8 @@ class Day5 {
                 if (i == testInput.count() - 1) {
                     break
                 }
-                if (c.isLowerCase() && testInput[i + 1] == c.toUpperCase()) {
-                    testInput.removeAt(i)
-                    testInput.removeAt(i)
-                    i = if (i == 0) 0 else i - 1
-                } else if (c.isUpperCase() && testInput[i + 1] == c.toLowerCase()) {
+                if (c.isLowerCase() && testInput[i + 1] == c.toUpperCase() ||
+                    c.isUpperCase() && testInput[i + 1] == c.toLowerCase()) {
                     testInput.removeAt(i)
                     testInput.removeAt(i)
                     i = if (i == 0) 0 else i - 1
